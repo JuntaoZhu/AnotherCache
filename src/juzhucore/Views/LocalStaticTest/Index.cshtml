@@ -1,0 +1,38 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model juzhucore.Models.StaticTestForm
+
+@{
+}
+
+@using (Html.BeginForm())
+{
+    <div class="form-horizontal">
+        <h4>Local Static File Load Test</h4>
+        <h3>@ViewBag.Message</h3>
+        <h3>@ViewBag.StartTime</h3>
+        <h3>@ViewBag.StopTime</h3>
+        <hr/>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FilesCount, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FilesCount)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.FileSize, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FileSize)
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" name="Submit" value="Initialize" class="btn btn-default" />
+                <input type="submit" name="Submit" value="CleanUp" class="btn btn-default" />
+                <input type="submit" name="Submit" value="LoadTest" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
